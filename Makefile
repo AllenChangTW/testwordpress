@@ -1,4 +1,6 @@
 
+PWD=$(pwd)
+
 make run:
 	docker run -d --name huakang.wordpress \
 		--network hkor \
@@ -6,5 +8,5 @@ make run:
 		-e VIRTUAL_PORT=3000 \
 		-e ENV=docker \
 		--restart=always \
-		-v $(pwd):/www \
+		-v $(PWD):/www \
 		hkor/php
